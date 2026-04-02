@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSU Events Hub - Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header and Navigation Styles */
+        header {
+            background-color: #ffffff;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #0056b3; /* PSU Blue */
+            margin: 0;
+            flex-shrink: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li:first-child {
+            margin-left: 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 0.5rem 0.8rem;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li a i {
+            margin-right: 0.6rem;
+            font-size: 1.1rem;
+        }
+
+        nav ul li a:hover {
+            background-color: #e0e7ef;
+            color: #0056b3;
+        }
+
+        /* Main Content Area - Container for Boxes */
+        .dashboard-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow boxes to wrap */
+            justify-content: center; /* Center boxes horizontally */
+            padding: 2rem;
+            gap: 1.5rem; /* Space between boxes */
+            max-width: 1200px; /* Max width for the whole container */
+            margin: 2rem auto; /* Center the container itself */
+        }
+
+        /* Individual Box Styling */
+        .dashboard-box {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 1.5rem;
+            width: 300px; /* Fixed width for each box */
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column; /* Stack content vertically */
+            justify-content: space-between; /* Distribute space if needed */
+        }
+
+        .dashboard-box:hover {
+            transform: translateY(-5px); /* Slight lift on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .dashboard-box h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #0056b3;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .dashboard-box p {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 1.5rem; /* Space before potential buttons */
+        }
+
+        .dashboard-box .box-icon {
+            font-size: 2.5rem; /* Larger icon */
+            color: #007bff; /* A distinct color for box icons */
+            margin-bottom: 1rem;
+        }
+
+        .dashboard-box .btn-box {
+            display: inline-block;
+            padding: 0.7rem 1.2rem;
+            background-color: #0056b3;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            margin-top: auto; /* Pushes button to the bottom if content varies */
+        }
+
+        .dashboard-box .btn-box:hover {
+            background-color: #003d80;
+        }
+
+        /* Responsive Adjustments for Boxes */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            h1 {
+                margin-bottom: 1rem;
+                text-align: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            nav ul li a {
+                width: 100%;
+                justify-content: center;
+                padding: 0.8rem;
+            }
+
+            nav ul li a i {
+                margin-right: 0.8rem;
+            }
+
+            .dashboard-container {
+                flex-direction: column; /* Stack boxes vertically on small screens */
+                align-items: center;
+            }
+
+            .dashboard-box {
+                width: 90%; /* Make boxes wider on mobile */
+                max-width: 350px; /* But not excessively wide */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>PAMPANGA STATE UNIVERSITY EVENTS HUB</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="pages/about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="pages/events.html"><i class="fas fa-calendar-alt"></i> Events Calendar</a></li>
+                <li><a href="pages/booth.html"><i class="fas fa-store"></i> Booths</a></li>
+                <li><a href="pages/inquire.html"><i class="fas fa-question-circle"></i> Inquire</a></li>
+                <li><a href="pages/feedback.html"><i class="fas fa-comment-dots"></i> Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="dashboard-container">
+        <div class="dashboard-box">
+            <div class="box-icon"><i class="fas fa-calendar-check"></i></div>
+            <h2>Upcoming Events</h2>
+            <p>View all scheduled events, details, and registration links.</p>
+            <a href="pages/events.html" class="btn-box">View Events</a>
+        </div>
+
+        <div class="dashboard-box">
+            <div class="box-icon"><i class="fas fa-user-friends"></i></div>
+            <h2>Manage Booths</h2>
+            <p>Register, update, or view your event booths.</p>
+            <a href="pages/booth.html" class="btn-box">Manage Booths</a>
+        </div>
+
+        <div class="dashboard-box">
+            <div class="box-icon"><i class="fas fa-envelope-open-text"></i></div>
+            <h2>Inquiries</h2>
+            <p>Submit or check the status of your inquiries.</p>
+            <a href="pages/inquire.html" class="btn-box">Submit Inquiry</a>
+        </div>
+
+        <div class="dashboard-box">
+            <div class="box-icon"><i class="fas fa-comment-alt"></i></div>
+            <h2>Feedback</h2>
+            <p>Share your thoughts and suggestions about events.</p>
+            <a href="pages/feedback.html" class="btn-box">Leave Feedback</a>
+        </div>
+    </div>
+</body>
+
+</html>
